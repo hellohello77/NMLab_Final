@@ -1,0 +1,25 @@
+version: "3.4"
+
+services:
+  nmlab-final:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    ports:
+      - "4000:4000"
+    environment:
+      - REACT_APP_MAPBOX=pk.eyJ1IjoibWVjb2xpMTIxOSIsImEiOiJjbDN5a2czbXkwMG1zM2tzNGxnbDB1Y3J0In0.HUc61PMJdrk1aF2i2E9x4Q
+      - REACT_APP_USER=NMLAB_FINAL
+      - REACT_APP_PASSWORD=TOO_MUCH
+      - AWS_DEFAULT_REGION=ap-northeast-1
+      - AWS_ACCESS_KEY_ID=AKIAYQ7MGBWZC3J6MUUN
+      - AWS_SECRET_ACCESS_KEY=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
+    volumes:
+      - /app
+    networks:
+      - nmlab
+
+networks:
+  nmlab:
+    external: true
+
